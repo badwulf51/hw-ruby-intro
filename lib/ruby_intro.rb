@@ -31,7 +31,7 @@ def max_2_sum(array)
 end
 
 def sum_to_n? (arr, n)
-  # YOUR CODE HERE
+  
  return arr.combination(2).any? {|a, b| a + b == n }
 end
 
@@ -42,7 +42,7 @@ def hello(name)
 end
 
 def starts_with_consonant? (s)
-  # YOUR CODE HERE
+
   return /^[b-df-hj-np-tv-z]/i.match(s) != nil
   
 end
@@ -54,6 +54,24 @@ end
 
 # Part 3
 
-class BookInStock
-# YOUR CODE HERE
+class BookInStock 
+    
+    attr_accessor :isbn
+	attr_accessor :price
+    
+	def initialize(isbn,price)
+		@isbn=isbn
+		@price=price
+		
+		# if number and price is empty raise argument
+
+		if @isbn.empty? || @price <= 0 
+			raise ArgumentError
+		end
+	end
+
+	def price_as_string
+		sprintf("$%2.2f", @price)
+	end
+
 end
